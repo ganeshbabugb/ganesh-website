@@ -7,13 +7,15 @@ import {
   List,
   ListItem,
   useColorModeValue,
-  chakra
+  chakra,
+  Center
 } from '@chakra-ui/react'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import {  IoLogoInstagram, IoLogoGithub, IoLogoWhatsapp, IoMailOutline } from 'react-icons/io5'
+import { CgProfile } from "react-icons/cg";
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -183,6 +185,20 @@ const Home = () => (
               </Button>
             </Link>
           </ListItem>
+
+          <Center>
+          <ListItem>
+            <Link href="https://drive.google.com/uc?export=download&id=1ozU-ldm6r7E73huDk_x9wwq9E_Kjx4Kl" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="whatsapp"
+                leftIcon={<CgProfile />}
+              >
+                Save Contact
+              </Button>
+            </Link>
+          </ListItem>
+          </Center>
 
         </List>
       </Section>

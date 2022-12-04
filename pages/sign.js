@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { FcGoogle } from 'react-icons/fc';
-import { FaGithub } from 'react-icons/fa';
+import { FaFacebook } from "react-icons/fa";
 import { IoSend, IoCall } from "react-icons/io5";
 import { Button, Center, Heading, Stack, Text, FormControl, FormLabel, Input, HStack, PinInput, PinInputField, IconButton, Box } from '@chakra-ui/react';
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Config = {
   apiKey: "AIzaSyAyZLEeJpPhJuop5uU-ZOzI366o69GSeDM",
@@ -23,6 +23,7 @@ const authentication = getAuth(app);
 
 const Sign = () => {
 
+//hooks
   const [expandForm, setExpandForm] = useState(false);
   const [user, setUser] = useState(false);
   const [phoneNumber, setphoneNumber] = useState('');
@@ -31,6 +32,7 @@ const Sign = () => {
   const HandleInputChange = (e) => setphoneNumber(e.target.value);
   const HandleOTPChange = (e) => setOTP(e);
 
+//OTP
   const GenerateRechptcha = () => {
        window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
        'size': 'invisible',
@@ -71,6 +73,19 @@ const Sign = () => {
     }
   }
 
+//Google
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(authentication, provider)
+    .then((re)=>{
+      console.log(re);
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
+
+  //rest-of-code
   return (
     <Box>
     <Center p={8}>
@@ -128,18 +143,21 @@ const Sign = () => {
         w={'full'}
         maxW={'md'}
         variant={'solid'}
-        leftIcon={<FcGoogle />}>
+        leftIcon={<FcGoogle />}
+        onClick={signInWithGoogle}>
         <Center>
           <Text> Continue with Google </Text>
         </Center>
       </Button>
+
       <Button
         w={'full'}
         maxW={'md'}
         variant={'solid'}
-        leftIcon={<FaGithub />}>
+        colorScheme={'facebook'}
+        leftIcon={<FaFacebook />}>
         <Center>
-          <Text> Continue with Github </Text>
+          <Text>Continue with Facebook</Text>
         </Center>
       </Button>
     </Stack>
