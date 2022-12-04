@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
-import { IoSend } from "react-icons/io5";
+import { IoSend, IoCall } from "react-icons/io5";
 import { Button, Center, Heading, Stack, Text, FormControl, FormLabel, Input, HStack, PinInput, PinInputField, IconButton, Box } from '@chakra-ui/react';
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { initializeApp } from "firebase/app";
@@ -24,6 +24,7 @@ const authentication = getAuth(app);
 const Sign = () => {
 
   const [expandForm, setExpandForm] = useState(false);
+  const [user, setUser] = useState(false);
   const [phoneNumber, setphoneNumber] = useState('');
   const [OTP, setOTP] = useState();
 
@@ -47,11 +48,11 @@ const Sign = () => {
         GenerateRechptcha();
         let appVerifier = window.recaptchaVerifier;
         let phonenumber = "+91"+phoneNumber;
+        console.log(phonenumber);
         signInWithPhoneNumber(authentication, phonenumber, appVerifier)
           .then((confirmationResult) => {
               window.confirmationResult = confirmationResult;
-          }).catch((error) => {
-            console.log(error)
+          }).catch(() => {
           });
       }
   }
@@ -62,8 +63,10 @@ const Sign = () => {
         confirmationResult.confirm(OTP).then((result) => {
         const user = result.user;
         console.log("user created" + user);
-      }).catch((error) => {
-          console.log(error)
+        setExpandForm(false);
+        setUser(false);
+      }).catch(() => {
+          setUser(true);
       });
     }
   }
@@ -78,6 +81,7 @@ const Sign = () => {
 
         <FormLabel mt='3'>Enter mobile number</FormLabel>
           <HStack>
+              <IconButton icon={<IoCall />} size='md' aria-label='Call Segun'/>
               <Input type="number" onChange={HandleInputChange} value={phoneNumber} variant='filled'/>
               <IconButton icon={<IoSend />} onClick={RequestOTP} colorScheme='teal' size='md' type='submit'/>
           </HStack>
@@ -105,6 +109,14 @@ const Sign = () => {
         </>
       : null
     }
+
+      {
+        user === true
+        ?
+          <Center><Text as='b' fontSize='sm'>INVALID OTP!</Text></Center>
+        :
+        null
+      }
 
       </FormControl>
 
