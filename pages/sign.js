@@ -167,7 +167,6 @@ const Sign = () => {
         w={'full'}
         maxW={'md'}
         variant={'solid'}
-        colorScheme={'facebook'}
         leftIcon={<FaGithub />}
         onClick={signInWithGithub}>
         <Center>
