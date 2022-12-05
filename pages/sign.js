@@ -5,7 +5,7 @@ import { IoSend, IoCall } from "react-icons/io5";
 import { Button, Center, Heading, Stack, Text, FormControl, FormLabel, Input, HStack, PinInput, PinInputField, IconButton, Box } from '@chakra-ui/react';
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 
 const Config = {
   apiKey: "AIzaSyAyZLEeJpPhJuop5uU-ZOzI366o69GSeDM",
@@ -85,6 +85,18 @@ const Sign = () => {
     })
   }
 
+//Facebook
+  const signInWithFacebook = () => {
+    const provider = new FacebookAuthProvider();
+    signInWithPopup(authentication, provider)
+    .then((re)=>{
+      console.log(re);
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
+
   //rest-of-code
   return (
     <Box>
@@ -155,7 +167,8 @@ const Sign = () => {
         maxW={'md'}
         variant={'solid'}
         colorScheme={'facebook'}
-        leftIcon={<FaFacebook />}>
+        leftIcon={<FaFacebook />}
+        onClick={signInWithFacebook}>
         <Center>
           <Text>Continue with Facebook</Text>
         </Center>
