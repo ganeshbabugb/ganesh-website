@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { FcGoogle } from 'react-icons/fc';
-import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { IoSend, IoCall } from "react-icons/io5";
 import { Button, Center, Heading, Stack, Text, FormControl, FormLabel, Input, HStack, PinInput, PinInputField, IconButton, Box } from '@chakra-ui/react';
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 
 const Config = {
   apiKey: "AIzaSyAyZLEeJpPhJuop5uU-ZOzI366o69GSeDM",
@@ -75,8 +75,7 @@ const Sign = () => {
 
 //Google
   const signInWithGoogle = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(authentication, provider)
+    signInWithPopup(authentication, new GoogleAuthProvider())
     .then((re)=>{
       console.log(re);
     })
@@ -85,10 +84,9 @@ const Sign = () => {
     })
   }
 
-//Facebook
-  const signInWithFacebook = () => {
-    const provider = new FacebookAuthProvider();
-    signInWithPopup(authentication, provider)
+//Github
+  const signInWithGithub = () => {
+    signInWithPopup(authentication, new GithubAuthProvider())
     .then((re)=>{
       console.log(re);
     })
@@ -104,9 +102,10 @@ const Sign = () => {
     <Stack spacing={2} align={'center'} maxW={'md'} w={'full'}>
 
     <Heading as="h1" my={3}>Register</Heading>
+
       <FormControl>
 
-        <FormLabel mt='3'>Enter mobile number</FormLabel>
+        <FormLabel>Enter Phone Number</FormLabel>
           <HStack>
               <IconButton icon={<IoCall />} size='md' aria-label='Call Segun'/>
               <Input type="number" onChange={HandleInputChange} value={phoneNumber} variant='filled'/>
@@ -129,7 +128,7 @@ const Sign = () => {
           </HStack>
         </Center>
         <Center>
-          <Button variant={'solid'} colorScheme='teal' size='md' my='3' onClick={VerifyOTP}>
+          <Button variant={'solid'} colorScheme='teal' size='md' mt='3' onClick={VerifyOTP}>
             Verify
           </Button>
         </Center>
@@ -147,9 +146,11 @@ const Sign = () => {
 
       </FormControl>
 
-      <Center>
+      <Center my={'3'}>
         <div id="recaptcha-container" />
       </Center>
+
+      <Text as="b" fontSize={'sm'} p={2}> (OR) </Text>
 
       <Button
         w={'full'}
@@ -167,10 +168,10 @@ const Sign = () => {
         maxW={'md'}
         variant={'solid'}
         colorScheme={'facebook'}
-        leftIcon={<FaFacebook />}
-        onClick={signInWithFacebook}>
+        leftIcon={<FaGithub />}
+        onClick={signInWithGithub}>
         <Center>
-          <Text>Continue with Facebook</Text>
+          <Text>Continue with Github</Text>
         </Center>
       </Button>
     </Stack>
