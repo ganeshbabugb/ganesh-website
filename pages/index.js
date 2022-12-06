@@ -10,11 +10,19 @@ import {
   chakra,
   Center
 } from '@chakra-ui/react'
+
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import {  IoLogoInstagram, IoLogoGithub, IoLogoWhatsapp, IoMailOutline } from 'react-icons/io5'
+
+import {
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoWhatsapp,
+  IoMailOutline
+} from 'react-icons/io5'
+
 import { CgProfile } from "react-icons/cg";
 import Image from 'next/image'
 

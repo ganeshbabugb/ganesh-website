@@ -1,12 +1,41 @@
 import React, { useState } from 'react'
+
 import { FcGoogle } from 'react-icons/fc';
+
 import { FaGithub } from "react-icons/fa";
-import { IoSend, IoCall } from "react-icons/io5";
-import { Button, Center, Heading, Stack, Text, FormControl, FormLabel, Input, HStack, PinInput, PinInputField, IconButton, Box } from '@chakra-ui/react';
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
-import { Alert, AlertIcon } from '@chakra-ui/react'
+
+import {
+  IoSend,
+  IoCall
+} from "react-icons/io5";
+
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  RecaptchaVerifier,
+  signInWithPhoneNumber
+} from "firebase/auth";
+
+import {
+  Box,
+  Button,
+  Center,
+  Heading,
+  Stack,
+  Text,
+  FormControl,
+  Input,
+  HStack,
+  PinInput,
+  PinInputField,
+  IconButton,
+  Alert,
+  AlertIcon
+} from '@chakra-ui/react';
 
 const Config = {
   apiKey: "AIzaSyAyZLEeJpPhJuop5uU-ZOzI366o69GSeDM",
@@ -27,10 +56,9 @@ const Sign = () => {
 //hooks
   const [expandForm, setExpandForm] = useState(false);
   const [user, setUser] = useState(false);
+  const [userCreated, setUserCreated] = useState(false);
   const [phoneNumber, setphoneNumber] = useState('');
   const [OTP, setOTP] = useState();
-
-  const [userCreated, setUserCreated] = useState(false);
 
   const HandleInputChange = (e) => setphoneNumber(e.target.value);
   const HandleOTPChange = (e) => setOTP(e);
@@ -121,19 +149,17 @@ const Sign = () => {
 
       <FormControl>
 
-        <FormLabel>Enter Phone Number</FormLabel>
-          <HStack>
-              <IconButton icon={<IoCall />} size='md' aria-label='Call Segun'/>
-              <Input type="number" onChange={HandleInputChange} value={phoneNumber} variant='filled'/>
-              <IconButton icon={<IoSend />} onClick={RequestOTP} colorScheme='teal' size='md' type='submit'/>
-          </HStack>
+        <HStack>
+            <IconButton icon={<IoCall />} size='md' aria-label='Call Segun'/>
+            <Input type="number" onChange={HandleInputChange} value={phoneNumber} variant='filled'/>
+            <IconButton icon={<IoSend />} onClick={RequestOTP} colorScheme='teal' size='md' type='submit'/>
+        </HStack>
 
       {
         expandForm
         ?
         <>
-        <FormLabel mt='3'>Enter OTP</FormLabel>
-        <Center>
+        <Center mt='3'>
           <HStack spacing={1}>
             <PinInput size='md' variant='filled' onChange={HandleOTPChange} placeholder="_" otp>
               <PinInputField />
@@ -158,7 +184,7 @@ const Sign = () => {
       {
         user
         ?
-          <Center><Text as='b' fontSize='sm'>INVALID OTP!</Text></Center>
+          <Center><Text as='b' fontSize='sm' mt='2'>INVALID OTP!</Text></Center>
         :
         null
       }
