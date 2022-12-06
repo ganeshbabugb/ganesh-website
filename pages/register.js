@@ -22,7 +22,7 @@ const app = initializeApp(Config);
 
 const authentication = getAuth(app);
 
-const Register = () => {
+const Sign = () => {
 
 //hooks
   const [expandForm, setExpandForm] = useState(false);
@@ -197,4 +197,4 @@ const Register = () => {
     </Box>
   )}
 
-export default Register
+export default Sign
