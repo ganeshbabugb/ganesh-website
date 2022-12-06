@@ -71,12 +71,16 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
         >
 
+          <LinkItem href="/" path={path}>
+            Profile
+          </LinkItem>
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
-          <LinkItem href="/sign" path={path}>
+          <LinkItem href="/register" path={path}>
             Register
           </LinkItem>
+
         </Stack>
 
         <Box flex={1} align="right">
@@ -92,12 +96,12 @@ const Navbar = props => {
               />
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                  <MenuItem as={Link}>Profile</MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
-                <NextLink href="/sign" passHref>
+                <NextLink href="/register" passHref>
                   <MenuItem as={Link}>Register</MenuItem>
                 </NextLink>
               </MenuList>
