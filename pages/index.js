@@ -23,7 +23,6 @@ import {
   IoLogoGithub,
   IoLogoWhatsapp,
   IoMailOutline,
-  IoLogoFirebase
 } from 'react-icons/io5'
 
 import {
