@@ -163,11 +163,11 @@ const Home = () => (
         </Heading>
         <Center>
           <Wrap spacing={2}>
-          <IconButton icon={<FaLinux />} size='lg' fontSize='20px' variant='outline'/>
-          <IconButton icon={<FaReact />}  size='lg' fontSize='20px' variant='outline'/>
-          <IconButton icon={<FaSass />} size='lg' fontSize='20px' variant='outline'/>
-          <IconButton icon={<IoLogoJavascript />} size='lg' fontSize='20px' variant='outline'/>
-          <IconButton icon={<FaGithub />} size='lg' fontSize='20px' variant='outline'/>
+          <IconButton icon={<FaLinux />} size='lg' fontSize='20px' variant='outline' border='none'/>
+          <IconButton icon={<FaReact />}  size='lg' fontSize='20px' variant='outline' border='none'/>
+          <IconButton icon={<FaSass />} size='lg' fontSize='20px' variant='outline' border='none'/>
+          <IconButton icon={<IoLogoJavascript />} size='lg' fontSize='20px' variant='outline' border='none'/>
+          <IconButton icon={<FaGithub />} size='lg' fontSize='20px' variant='outline' border='none'/>
           </Wrap>
         </Center>
       </Section>
