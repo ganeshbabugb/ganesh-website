@@ -98,8 +98,10 @@ const Sign = () => {
         setExpandForm(false);
         setUser(false);
         setUserCreated(true);
+        setTimeout(() => setUserCreated(false) , 2000);
       }).catch(() => {
           setUser(true);
+          setTimeout(() => setUser(false) , 3000);
       });
     }
   }
@@ -110,6 +112,7 @@ const Sign = () => {
     .then((re)=>{
       console.log(re); //it return a user object in console
       setUserCreated(true);
+      setTimeout(() => setUserCreated(false) , 2000);
     })
     .catch((err)=>{
       console.log(err);
@@ -122,6 +125,7 @@ const Sign = () => {
     .then((re)=>{
       console.log(re); //it return a user object in console
       setUserCreated(true);
+      setTimeout(() => setUserCreated(false) , 2000);
     })
     .catch((err)=>{
       console.log(err);
