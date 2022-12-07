@@ -9,7 +9,8 @@ import {
   useColorModeValue,
   chakra,
   Center,
-  Wrap
+  Wrap,
+  IconButton
 } from '@chakra-ui/react'
 
 import Paragraph from '../components/paragraph'
