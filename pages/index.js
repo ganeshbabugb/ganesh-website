@@ -8,7 +8,8 @@ import {
   ListItem,
   useColorModeValue,
   chakra,
-  Center
+  Center,
+  Wrap
 } from '@chakra-ui/react'
 
 import Paragraph from '../components/paragraph'
@@ -20,10 +21,25 @@ import {
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoWhatsapp,
-  IoMailOutline
+  IoMailOutline,
+  IoLogoFirebase
 } from 'react-icons/io5'
 
-import { CgProfile } from "react-icons/cg";
+import {
+  FaReact,
+  FaSass,
+  FaLinux,
+  FaGithub
+} from 'react-icons/fa'
+
+import {
+  IoLogoJavascript
+} from 'react-icons/io'
+
+import {
+  CgProfile
+} from "react-icons/cg";
+
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -139,6 +155,22 @@ const Home = () => (
           </Link>
           , Photography, Travel, Learning.
         </Paragraph>
+      </Section>
+
+      <Section>
+        <Heading as="h3" variant="section-title">
+          Skills
+        </Heading>
+        <Center>
+          <Wrap spacing={2}>
+          <IconButton icon={<FaLinux />} size='lg' fontSize='20px' variant='outline'/>
+          <IconButton icon={<FaReact />}  size='lg' fontSize='20px' variant='outline'/>
+          <IconButton icon={<FaSass />} size='lg' fontSize='20px' variant='outline'/>
+          <IconButton icon={<IoLogoJavascript />} size='lg' fontSize='20px' variant='outline'/>
+          <IconButton icon={<FaGithub />} size='lg' fontSize='20px' variant='outline'/>
+          <IconButton icon={<IoLogoFirebase />} size='lg' fontSize='20px' variant='outline'/>
+          </Wrap>
+        </Center>
       </Section>
 
       <Section delay={0.3}>
