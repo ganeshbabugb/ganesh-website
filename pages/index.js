@@ -169,7 +169,6 @@ const Home = () => (
           <IconButton icon={<FaSass />} size='lg' fontSize='20px' variant='outline'/>
           <IconButton icon={<IoLogoJavascript />} size='lg' fontSize='20px' variant='outline'/>
           <IconButton icon={<FaGithub />} size='lg' fontSize='20px' variant='outline'/>
-          <IconButton icon={<IoLogoFirebase />} size='lg' fontSize='20px' variant='outline'/>
           </Wrap>
         </Center>
       </Section>
