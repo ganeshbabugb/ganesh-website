@@ -138,7 +138,7 @@ const Sign = () => {
     <Center p={8}>
     <Stack spacing={2} align={'center'} maxW={'md'} w={'full'}>
 
-      <Heading as="h1" my={3}>Register</Heading>
+      <Heading as="h1" variant="big-title">Register</Heading>
 
       {
         userCreated

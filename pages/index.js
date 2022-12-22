@@ -29,16 +29,12 @@ import {
   FaReact,
   FaSass,
   FaLinux,
-  FaGithub
+  FaJava
 } from 'react-icons/fa'
 
 import {
   IoLogoJavascript
 } from 'react-icons/io'
-
-import {
-  CgProfile
-} from "react-icons/cg";
 
 import Image from 'next/image'
 
@@ -99,18 +95,23 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Ganesh is a freelancer and a
-          {' '}
-          <Link href="https://wikitia.com/wiki/MERN_(solution_stack)" target="_blank">
-            FULL-STACK
-          </Link>
-          {' '}
-          Developer based in India with a
+
+          Ganesh is a Computer Science student based in India with a
           passion for building digital services/stuff he wants. He has a knack
           for all things launching products, from planning and designing all the
           way to solving real-life problems with code. When not online, he loves
           hanging out with his friends.
         </Paragraph>
+
+        <Center mt={3}>
+          <Paragraph>
+          Click here to download {' '}
+            <Link href="" target="_blank">
+            My Resume
+            </Link>.
+          </Paragraph>
+        </Center>
+
       </Section>
 
       <Section delay={0.2}>
@@ -138,10 +139,7 @@ const Home = () => (
             Front-end web development
             </Link>.
         </BioSection>
-        <BioSection>
-          <BioYear>2022</BioYear>
-          Working as a freelancer.
-        </BioSection>
+
       </Section>
 
       <Section delay={0.3}>
@@ -164,10 +162,10 @@ const Home = () => (
         <Center>
           <Wrap spacing={2}>
           <IconButton icon={<FaLinux />} size='lg' fontSize='20px' variant='outline' border='none'/>
-          <IconButton icon={<FaReact />}  size='lg' fontSize='20px' variant='outline' border='none'/>
           <IconButton icon={<FaSass />} size='lg' fontSize='20px' variant='outline' border='none'/>
+          <IconButton icon={<FaReact />}  size='lg' fontSize='20px' variant='outline' border='none'/>
           <IconButton icon={<IoLogoJavascript />} size='lg' fontSize='20px' variant='outline' border='none'/>
-          <IconButton icon={<FaGithub />} size='lg' fontSize='20px' variant='outline' border='none'/>
+          <IconButton icon={<FaJava />} size='lg' fontSize='20px' variant='outline' border='none'/>
           </Wrap>
         </Center>
       </Section>
@@ -224,21 +222,6 @@ const Home = () => (
               </Button>
             </Link>
           </ListItem>
-
-          <Center>
-          <ListItem>
-            <Link href="https://drive.google.com/uc?export=download&id=1ozU-ldm6r7E73huDk_x9wwq9E_Kjx4Kl" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="whatsapp"
-                leftIcon={<CgProfile />}
-              >
-                Save Contact
-              </Button>
-            </Link>
-          </ListItem>
-          </Center>
-
         </List>
       </Section>
     </Container>

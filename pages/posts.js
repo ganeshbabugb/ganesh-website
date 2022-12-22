@@ -1,7 +1,8 @@
 import {
   Container,
   Heading,
-  SimpleGrid
+  SimpleGrid,
+  Center
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -11,9 +12,12 @@ import qrImg from '../public/images/contents/qr-thumbnail.png'
 const Posts = () => (
   <Layout title="Posts">
     <Container>
-      <Heading as="h3" fontSize={20} mb={4} variant="section-title">
-        Popular Posts
-      </Heading>
+
+      <Center>
+        <Heading as="h1" variant="big-title">
+          Popular Posts
+        </Heading>
+      </Center>
 
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
