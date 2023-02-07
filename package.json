@@ -31,5 +31,9 @@
     "eslint": "^8.31.0",
     "eslint-config-next": "^13.1.1",
     "prettier": "^2.8.2"
-  }
+  },
+  "main": "next.config.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib"
 }
