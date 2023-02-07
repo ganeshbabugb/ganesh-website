@@ -26,6 +26,7 @@ import {
 import { FaReact, FaSass, FaLinux, FaJava } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io'
 import Image from 'next/image'
+import { AiOutlineLinkedin } from 'react-icons/ai'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -228,6 +229,21 @@ const Home = () => (
           </ListItem>
 
           <ListItem>
+            <Link
+              href="https://www.linkedin.com/in/ganeshbabu25/"
+              target="_blank"
+            >
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<AiOutlineLinkedin />}
+              >
+                ganeshbabu
+              </Button>
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Link href="https://instagram.com/ganeshbabu___" target="_blank">
               <Button
                 variant="ghost"
@@ -235,21 +251,6 @@ const Home = () => (
                 leftIcon={<IoLogoInstagram />}
               >
                 @ganeshbabu___
-              </Button>
-            </Link>
-          </ListItem>
-
-          <ListItem>
-            <Link
-              href="https://wa.me/7010144395?text=Heyy%20Ganesh!"
-              target="_blank"
-            >
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoWhatsapp />}
-              >
-                +91 7010144395
               </Button>
             </Link>
           </ListItem>
