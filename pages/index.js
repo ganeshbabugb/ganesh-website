@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import {
   Link,
   Container,
@@ -12,30 +13,18 @@ import {
   Wrap,
   IconButton
 } from '@chakra-ui/react'
-
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-
 import {
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoWhatsapp,
-  IoMailOutline,
+  IoMailOutline
 } from 'react-icons/io5'
-
-import {
-  FaReact,
-  FaSass,
-  FaLinux,
-  FaJava
-} from 'react-icons/fa'
-
-import {
-  IoLogoJavascript
-} from 'react-icons/io'
-
+import { FaReact, FaSass, FaLinux, FaJava } from 'react-icons/fa'
+import { IoLogoJavascript } from 'react-icons/io'
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -61,7 +50,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Ganesh babu
           </Heading>
-          <p>( Developer / Designer / Sysadmin )</p>
+          <p> (Developer, Designer, and Sysadmin) </p>
         </Box>
         <Box
           flexShrink={0}
@@ -83,8 +72,8 @@ const Home = () => (
               src="/images/ganesh.jpg"
               alt="Profile image"
               borderRadius="full"
-              width="100%"
-              height="100%"
+              width="100"
+              height="100"
             />
           </Box>
         </Box>
@@ -95,23 +84,22 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-
-          Ganesh is a Computer Science student based in India with a
-          passion for building digital services/stuff he wants. He has a knack
-          for all things launching products, from planning and designing all the
-          way to solving real-life problems with code. When not online, he loves
-          hanging out with his friends.
+          Ganesh is a Computer Science student based in India with a passion for
+          building digital services/products he desires. He has a knack for
+          launching products, from planning and designing to solving real-life
+          problems with code. When not online, he enjoys spending time with his
+          friends.
         </Paragraph>
 
         <Center mt={3}>
           <Paragraph>
-          Click here to download {' '}
-            <Link href="" target="_blank">
-            My Resume
-            </Link>.
+            Click here to download{' '}
+            <Link href="" as={NextLink} passHref target="_blank">
+              My Resume
+            </Link>
+            .
           </Paragraph>
         </Center>
-
       </Section>
 
       <Section delay={0.2}>
@@ -120,26 +108,43 @@ const Home = () => (
         </Heading>
         <BioSection>
           <BioYear>2003</BioYear>
-          Born in {' '}
-          <Link href="https://en.wikipedia.org/wiki/Tamil_Nadu" target="_blank">
-          Tamilnadu ( தமிழ்நாடு )
-          </Link>, India.
+          Born in{' '}
+          <Link
+            href="https://en.wikipedia.org/wiki/Tamil_Nadu"
+            as={NextLink}
+            passHref
+            target="_blank"
+          >
+            Tamilnadu ( தமிழ்நாடு )
+          </Link>
+          , India.
         </BioSection>
         <BioSection>
           <BioYear>2020</BioYear>
-          Completed the Master&apos;s Program in {' '}
-            <Link href="https://en.wikipedia.org/wiki/Category:Linux_administration" target="_blank">
+          Completed the Master&apos;s Program in{' '}
+          <Link
+            href="https://en.wikipedia.org/wiki/Category:Linux_administration"
+            as={NextLink}
+            passHref
+            target="_blank"
+          >
             Linux Administration
-            </Link>.
+          </Link>
+          .
         </BioSection>
         <BioSection>
           <BioYear>2021</BioYear>
-          Completed the Master&apos;s Program in {' '}
-            <Link href="https://en.wikipedia.org/wiki/Front-end_web_development" target="_blank">
+          Completed the Master&apos;s Program in{' '}
+          <Link
+            href="https://en.wikipedia.org/wiki/Front-end_web_development"
+            as={NextLink}
+            passHref
+            target="_blank"
+          >
             Front-end web development
-            </Link>.
+          </Link>
+          .
         </BioSection>
-
       </Section>
 
       <Section delay={0.3}>
@@ -148,7 +153,12 @@ const Home = () => (
         </Heading>
         <Paragraph>
           Art, Drawing,{' '}
-          <Link href="https://open.spotify.com/track/4OtqlH4UCGzV8fLy36STjE?si=-UyDWsQFQfqmLdBPzzNbwg&utm_source=native-share-menu" target="_blank">
+          <Link
+            href="https://open.spotify.com/track/4OtqlH4UCGzV8fLy36STjE?si=-UyDWsQFQfqmLdBPzzNbwg&utm_source=native-share-menu"
+            as={NextLink}
+            passHref
+            target="_blank"
+          >
             Music
           </Link>
           , Photography, Travel, Learning.
@@ -161,11 +171,41 @@ const Home = () => (
         </Heading>
         <Center>
           <Wrap spacing={2}>
-          <IconButton icon={<FaLinux />} size='lg' fontSize='20px' variant='outline' border='none'/>
-          <IconButton icon={<FaSass />} size='lg' fontSize='20px' variant='outline' border='none'/>
-          <IconButton icon={<FaReact />}  size='lg' fontSize='20px' variant='outline' border='none'/>
-          <IconButton icon={<IoLogoJavascript />} size='lg' fontSize='20px' variant='outline' border='none'/>
-          <IconButton icon={<FaJava />} size='lg' fontSize='20px' variant='outline' border='none'/>
+            <IconButton
+              icon={<FaLinux />}
+              size="lg"
+              fontSize="20px"
+              variant="outline"
+              border="none"
+            />
+            <IconButton
+              icon={<FaSass />}
+              size="lg"
+              fontSize="20px"
+              variant="outline"
+              border="none"
+            />
+            <IconButton
+              icon={<FaReact />}
+              size="lg"
+              fontSize="20px"
+              variant="outline"
+              border="none"
+            />
+            <IconButton
+              icon={<IoLogoJavascript />}
+              size="lg"
+              fontSize="20px"
+              variant="outline"
+              border="none"
+            />
+            <IconButton
+              icon={<FaJava />}
+              size="lg"
+              fontSize="20px"
+              variant="outline"
+              border="none"
+            />
           </Wrap>
         </Center>
       </Section>
@@ -200,7 +240,10 @@ const Home = () => (
           </ListItem>
 
           <ListItem>
-            <Link href="https://wa.me/7010144395?text=Heyy%20Ganesh!" target="_blank">
+            <Link
+              href="https://wa.me/7010144395?text=Heyy%20Ganesh!"
+              target="_blank"
+            >
               <Button
                 variant="ghost"
                 colorScheme="teal"
@@ -212,13 +255,16 @@ const Home = () => (
           </ListItem>
 
           <ListItem>
-            <Link href="mailto:dev.ganeshbabu.in@gamil.com?subject=Heyy Ganesh!&body=Start typing..." target="_blank">
+            <Link
+              href="mailto:dev.ganeshbabu.in@gamil.com?subject=Heyy Ganesh!&body=Start typing..."
+              target="_blank"
+            >
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<IoMailOutline />}
               >
-               dev.ganeshbabu.in@gamil.com
+                dev.ganeshbabu.in@gamil.com
               </Button>
             </Link>
           </ListItem>

@@ -1,33 +1,31 @@
-import {
-  Container,
-  Heading,
-  SimpleGrid,
-  Center
-} from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Center } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
-import qrImg from '../public/images/contents/qr-thumbnail.png'
+import thumbqrImg from '../public/images/contents/qr-thumbnail.png'
+import thumbnvim from '../public/images/contents/nvim.png'
 
 const Posts = () => (
   <Layout title="Posts">
     <Container>
-
       <Center>
         <Heading as="h1" variant="big-title">
-          Popular Posts
+          Posts
         </Heading>
       </Center>
 
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
-
           <GridItem
-            title="QR-Code generator using React-js"
-            thumbnail={qrImg}
+            title="My Nvim v0.8 Setup for Daily Workflow"
+            thumbnail={thumbnvim}
+            href="https://github.com/ganeshbabugb/NVIM23"
+          />
+          <GridItem
+            title="Create a QR Code generator using React.js"
+            thumbnail={thumbqrImg}
             href="https://qr-creater.netlify.app/"
           />
-
         </SimpleGrid>
       </Section>
     </Container>

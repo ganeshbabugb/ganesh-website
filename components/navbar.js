@@ -1,5 +1,6 @@
 import Logo from './logo'
 import NextLink from 'next/link'
+import { forwardRef } from 'react'
 import {
   Container,
   Box,
@@ -21,19 +22,24 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
-    <NextLink href={href} passHref scroll={false}>
-      <Link
-        p={2}
-        bg={active ? 'grassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-        target={target}
-        {...props}
-      >
-        {children}
-      </Link>
-    </NextLink>
+    <Link
+      as={NextLink}
+      href={href}
+      scroll={false}
+      p={2}
+      bg={active ? 'grassTeal' : undefined}
+      color={active ? '#202023' : inactiveColor}
+      target={target}
+      {...props}
+    >
+      {children}
+    </Link>
   )
 }
+
+const MenuLink = forwardRef((props, ref) => (
+  <Link ref={ref} as={NextLink} {...props} />
+))
 
 const Navbar = props => {
   const { path } = props
@@ -70,7 +76,6 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-
           <LinkItem href="/" path={path}>
             Profile
           </LinkItem>
@@ -80,7 +85,6 @@ const Navbar = props => {
           <LinkItem href="/register" path={path}>
             Register
           </LinkItem>
-
         </Stack>
 
         <Box flex={1} align="right">
@@ -95,15 +99,15 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>Profile</MenuItem>
-                </NextLink>
-                <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
-                </NextLink>
-                <NextLink href="/register" passHref>
-                  <MenuItem as={Link}>Register</MenuItem>
-                </NextLink>
+                <MenuItem as={MenuLink} href="/">
+                  profile
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/posts">
+                  Posts
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/Register">
+                  Register
+                </MenuItem>
               </MenuList>
             </Menu>
           </Box>
