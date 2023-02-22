@@ -17,16 +17,12 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import {
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoWhatsapp,
-  IoMailOutline
-} from 'react-icons/io5'
-import { FaReact, FaSass, FaLinux, FaJava } from 'react-icons/fa'
+import { IoLogoInstagram, IoLogoGithub, IoMailOutline } from 'react-icons/io5'
+import { FaReact, FaLinux, FaJava } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io'
-import Image from 'next/image'
 import { AiOutlineLinkedin } from 'react-icons/ai'
+import { SiDart } from 'react-icons/si'
+import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -180,7 +176,7 @@ const Home = () => (
               border="none"
             />
             <IconButton
-              icon={<FaSass />}
+              icon={<IoLogoJavascript />}
               size="lg"
               fontSize="20px"
               variant="outline"
@@ -194,7 +190,7 @@ const Home = () => (
               border="none"
             />
             <IconButton
-              icon={<IoLogoJavascript />}
+              icon={<SiDart />}
               size="lg"
               fontSize="20px"
               variant="outline"
