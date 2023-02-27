@@ -22,6 +22,7 @@ import { FaReact, FaLinux, FaJava } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io'
 import { AiOutlineLinkedin } from 'react-icons/ai'
 import { SiDart } from 'react-icons/si'
+import Avathar from '../public/assets/images/ganesh.jpg'
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -66,7 +67,7 @@ const Home = () => (
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/ganesh.jpg"
+              src={Avathar}
               alt="Profile image"
               borderRadius="full"
               width="100"
