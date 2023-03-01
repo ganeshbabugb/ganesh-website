@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { Text, useColorModeValue } from '@chakra-ui/react'
-import WhiteHeart from './icons/whiteHeart'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+import WhiteHeart from './icons/whiteHeart'
 
 const LogoBox = styled.span`
   font-weight: bold;

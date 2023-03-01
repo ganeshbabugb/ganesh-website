@@ -1,29 +1,29 @@
-import NextLink from 'next/link'
 import {
-  Link,
-  Container,
-  Heading,
   Box,
   Button,
+  Center,
+  chakra,
+  Container,
+  Heading,
+  IconButton,
+  Link,
   List,
   ListItem,
   useColorModeValue,
-  chakra,
-  Center,
-  Wrap,
-  IconButton
+  Wrap
 } from '@chakra-ui/react'
-import Paragraph from '../components/paragraph'
+import Image from 'next/image'
+import NextLink from 'next/link'
+import { AiOutlineLinkedin } from 'react-icons/ai'
+import { FaJava, FaLinux, FaReact } from 'react-icons/fa'
+import { IoLogoJavascript } from 'react-icons/io'
+import { IoLogoGithub, IoLogoInstagram, IoMailOutline } from 'react-icons/io5'
+import { SiDart } from 'react-icons/si'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
+import Paragraph from '../components/paragraph'
 import Section from '../components/section'
-import { IoLogoInstagram, IoLogoGithub, IoMailOutline } from 'react-icons/io5'
-import { FaReact, FaLinux, FaJava } from 'react-icons/fa'
-import { IoLogoJavascript } from 'react-icons/io'
-import { AiOutlineLinkedin } from 'react-icons/ai'
-import { SiDart } from 'react-icons/si'
 import Avathar from '../public/assets/images/ganesh.jpg'
-import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)

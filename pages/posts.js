@@ -1,9 +1,9 @@
-import { Container, Heading, SimpleGrid, Center } from '@chakra-ui/react'
+import { Center, Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { GridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
-import thumbqrImg from '../public/assets/images/contents/qr-thumbnail.png'
 import thumbnvim from '../public/assets/images/contents/nvim.png'
+import thumbqrImg from '../public/assets/images/contents/qr-thumbnail.png'
 
 const Posts = () => (
   <Layout title="Posts">
