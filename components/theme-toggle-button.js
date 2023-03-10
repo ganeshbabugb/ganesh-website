@@ -1,15 +1,15 @@
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ThemeToggleButton = () => {
-  const { toggleColorMode } = useColorMode()
+  const { toggleColorMode } = useColorMode();
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <motion.div
-        style={{ display: 'inline-block' }}
-        key={useColorModeValue('light', 'dark')}
+        style={{ display: "inline-block" }}
+        key={useColorModeValue("light", "dark")}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
@@ -17,13 +17,14 @@ const ThemeToggleButton = () => {
       >
         <IconButton
           aria-label="Toggle theme"
-          colorScheme={useColorModeValue('teal', 'orange')}
+          colorScheme={useColorModeValue("teal", "orange")}
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
-        ></IconButton>
+        >
+        </IconButton>
       </motion.div>
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default ThemeToggleButton
+export default ThemeToggleButton;
