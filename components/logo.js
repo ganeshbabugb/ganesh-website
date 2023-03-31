@@ -1,7 +1,7 @@
-import { Text, useColorModeValue } from "@chakra-ui/react";
-import styled from "@emotion/styled";
-import Link from "next/link";
-import WhiteHeart from "./icons/whiteHeart";
+import { Text, useColorModeValue } from '@chakra-ui/react'
+import styled from '@emotion/styled'
+import Link from 'next/link'
+import WhiteHeart from './icons/whiteHeart'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -19,7 +19,7 @@ const LogoBox = styled.span`
   &:hover > svg {
     transform: rotate(20deg);
   }
-`;
+`
 
 const Logo = () => {
   return (
@@ -27,7 +27,7 @@ const Logo = () => {
       <LogoBox>
         <WhiteHeart />
         <Text
-          color={useColorModeValue("gray.800", "whiteAlpha.900")}
+          color={useColorModeValue('gray.800', 'whiteAlpha.900')}
           fontFamily='M PLUS Rounded 1c", sans-serif'
           fontWeight="bold"
           ml={3}
@@ -36,7 +36,7 @@ const Logo = () => {
         </Text>
       </LogoBox>
     </Link>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

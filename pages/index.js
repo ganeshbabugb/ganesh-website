@@ -10,24 +10,24 @@ import {
   List,
   ListItem,
   useColorModeValue,
-  Wrap,
-} from "@chakra-ui/react";
-import Image from "next/image";
-import NextLink from "next/link";
-import { AiOutlineLinkedin } from "react-icons/ai";
-import { FaJava, FaLinux, FaReact } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-import { IoLogoGithub, IoLogoInstagram, IoMailOutline } from "react-icons/io5";
-import { SiDart } from "react-icons/si";
-import { BioSection, BioYear } from "../components/bio";
-import Layout from "../components/layouts/article";
-import Paragraph from "../components/paragraph";
-import Section from "../components/section";
-import Avathar from "../public/assets/images/ganesh.jpg";
+  Wrap
+} from '@chakra-ui/react'
+import Image from 'next/image'
+import NextLink from 'next/link'
+import { AiOutlineLinkedin } from 'react-icons/ai'
+import { FaJava, FaLinux, FaReact } from 'react-icons/fa'
+import { IoLogoJavascript } from 'react-icons/io'
+import { IoLogoGithub, IoLogoInstagram, IoMailOutline } from 'react-icons/io5'
+import { SiDart } from 'react-icons/si'
+import { BioSection, BioYear } from '../components/bio'
+import Layout from '../components/layouts/article'
+import Paragraph from '../components/paragraph'
+import Section from '../components/section'
+import Avathar from '../public/assets/images/ganesh.jpg'
 
 const ProfileImage = chakra(Image, {
-  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
-});
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+})
 
 const Home = () => (
   <Layout>
@@ -37,18 +37,18 @@ const Home = () => (
         mb={6}
         p={3}
         textAlign="center"
-        bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
-        css={{ backdropFilter: "blur(10px)" }}
+        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+        css={{ backdropFilter: 'blur(10px)' }}
       >
         Hello, I&apos;m an independent web developer from India!
       </Box>
 
-      <Box display={{ md: "flex" }}>
+      <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
             Ganesh babu
           </Heading>
-          <p>(Developer, Designer, and System Administrator)</p>
+          <p>(Front-End engineer, Designer, and System Administrator)</p>
         </Box>
         <Box
           flexShrink={0}
@@ -91,7 +91,7 @@ const Home = () => (
 
         <Center mt={3}>
           <Paragraph>
-            Click here to download{" "}
+            Click here to download{' '}
             <Link href="" as={NextLink} passHref target="_blank">
               My Resume
             </Link>
@@ -106,7 +106,7 @@ const Home = () => (
         </Heading>
         <BioSection>
           <BioYear>2003</BioYear>
-          Born in{" "}
+          Born in{' '}
           <Link
             href="https://en.wikipedia.org/wiki/Tamil_Nadu"
             as={NextLink}
@@ -119,7 +119,7 @@ const Home = () => (
         </BioSection>
         <BioSection>
           <BioYear>2020</BioYear>
-          Completed the Master&apos;s Program in{" "}
+          Completed the Master&apos;s Program in{' '}
           <Link
             href="https://en.wikipedia.org/wiki/Category:Linux_administration"
             as={NextLink}
@@ -132,7 +132,7 @@ const Home = () => (
         </BioSection>
         <BioSection>
           <BioYear>2021</BioYear>
-          Completed the Master&apos;s Program in{" "}
+          Completed the Master&apos;s Program in{' '}
           <Link
             href="https://en.wikipedia.org/wiki/Front-end_web_development"
             as={NextLink}
@@ -150,7 +150,7 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Drawing,{" "}
+          Art, Drawing,{' '}
           <Link
             href="https://open.spotify.com/track/4OtqlH4UCGzV8fLy36STjE?si=-UyDWsQFQfqmLdBPzzNbwg&utm_source=native-share-menu"
             as={NextLink}
@@ -270,7 +270,7 @@ const Home = () => (
       </Section>
     </Container>
   </Layout>
-);
+)
 
-export default Home;
-export { getServerSideProps } from "../components/chakra";
+export default Home
+export { getServerSideProps } from '../components/chakra'

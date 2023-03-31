@@ -1,9 +1,9 @@
-import { Center, Container, Heading, SimpleGrid } from "@chakra-ui/react";
-import { GridItem } from "../components/grid-item";
-import Layout from "../components/layouts/article";
-import Section from "../components/section";
-import thumbnvim from "../public/assets/images/contents/nvim.png";
-import thumbqrImg from "../public/assets/images/contents/qr-thumbnail.png";
+import { Center, Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { GridItem } from '../components/grid-item'
+import Layout from '../components/layouts/article'
+import Section from '../components/section'
+import thumbnvim from '../public/assets/images/contents/nvim.png'
+import thumbqrImg from '../public/assets/images/contents/qr-thumbnail.png'
 
 const Posts = () => (
   <Layout title="Posts">
@@ -30,7 +30,7 @@ const Posts = () => (
       </Section>
     </Container>
   </Layout>
-);
+)
 
-export default Posts;
-export { getServerSideProps } from "../components/chakra";
+export default Posts
+export { getServerSideProps } from '../components/chakra'
