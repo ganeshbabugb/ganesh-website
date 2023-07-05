@@ -4,6 +4,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import thumbnvim from '../public/assets/images/contents/nvim.png'
 import thumbqrImg from '../public/assets/images/contents/qr-thumbnail.png'
+import portal from '../public/assets/images/contents/portal.png'
 
 const Posts = () => (
   <Layout title="Posts">
@@ -25,6 +26,11 @@ const Posts = () => (
             title="Create a QR Code generator using React.js"
             thumbnail={thumbqrImg}
             href="https://qr-creater.netlify.app/"
+          />
+          <GridItem
+            title="College portal for student data management."
+            thumbnail={portal}
+            href="https://nasc-portal.netlify.app/"
           />
         </SimpleGrid>
       </Section>
