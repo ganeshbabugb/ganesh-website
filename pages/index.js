@@ -16,9 +16,9 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 import { AiOutlineLinkedin } from 'react-icons/ai'
 import { FaJava, FaLinux, FaReact } from 'react-icons/fa'
+import { FaGolang } from "react-icons/fa6"
 import { IoLogoJavascript } from 'react-icons/io'
-import { IoLogoGithub, IoLogoInstagram, IoMailOutline } from 'react-icons/io5'
-import { SiDart } from 'react-icons/si'
+import { IoLogoGithub, IoMailOutline } from 'react-icons/io5'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
@@ -40,7 +40,7 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello, I&apos;m an independent web developer from India!
+        Hello, I&apos;m a passionate software engineer based in India!
       </Box>
 
       <Box display={{ md: 'flex' }}>
@@ -82,11 +82,15 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Ganesh is a Computer Science student based in India with a passion for
-          building digital services/products he desires. He has a knack for
-          launching products, from planning and designing to solving real-life
-          problems with code. When not online, he enjoys spending time with his
-          friends.
+          I’m a passionate software developer from India who enjoys turning ideas into impactful digital products. I love the entire journey from planning and writing clean, efficient code to solving real-world problems with thoughtful software solutions.
+        </Paragraph>
+
+        <Paragraph>
+          My experience spans building robust backend systems and developing high-performance, scalable services. Working on diverse projects has sharpened my technical skills.
+        </Paragraph>
+
+        <Paragraph>
+          I enjoy connecting with like-minded individuals who are passionate about technology, learning, and creating a positive impact. For me, great software is built not just with code, but with a genuine passion for making something that matters.
         </Paragraph>
 
         <Center mt={3}>
@@ -104,45 +108,18 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Bio
         </Heading>
+
         <BioSection>
-          <BioYear>2003</BioYear>
-          Born in{' '}
-          <Link
-            href="https://en.wikipedia.org/wiki/Tamil_Nadu"
-            as={NextLink}
-            passHref
-            target="_blank"
-          >
-            Tamilnadu ( தமிழ்நாடு )
-          </Link>
-          , India.
+          <BioYear>2021 – 2024</BioYear>
+          Earned a degree in Computer Science, gaining strong foundations in software development,
+          data structures, and system design through academic projects and practical experience.
         </BioSection>
+
         <BioSection>
-          <BioYear>2020</BioYear>
-          Completed the Master&apos;s Program in{' '}
-          <Link
-            href="https://en.wikipedia.org/wiki/Category:Linux_administration"
-            as={NextLink}
-            passHref
-            target="_blank"
-          >
-            Linux Administration
-          </Link>
-          .
+          <BioYear>2024 - Present</BioYear>
+          Working as a Software Engineer, contributing to the design, development, and deployment of scalable applications. Active open-source contributor, collaborating on community-driven projects.
         </BioSection>
-        <BioSection>
-          <BioYear>2021</BioYear>
-          Completed the Master&apos;s Program in{' '}
-          <Link
-            href="https://en.wikipedia.org/wiki/Front-end_web_development"
-            as={NextLink}
-            passHref
-            target="_blank"
-          >
-            Front-end web development
-          </Link>
-          .
-        </BioSection>
+
       </Section>
 
       <Section delay={0.3}>
@@ -150,16 +127,7 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Drawing,{' '}
-          <Link
-            href="https://open.spotify.com/track/4OtqlH4UCGzV8fLy36STjE?si=-UyDWsQFQfqmLdBPzzNbwg&utm_source=native-share-menu"
-            as={NextLink}
-            passHref
-            target="_blank"
-          >
-            Music
-          </Link>
-          , Photography, Travel, Learning.
+          Art, Podcasts, Learning, Coding, Travel.
         </Paragraph>
       </Section>
 
@@ -191,7 +159,7 @@ const Home = () => (
               border="none"
             />
             <IconButton
-              icon={<SiDart />}
+              icon={<FaGolang />}
               size="lg"
               fontSize="20px"
               variant="outline"
@@ -220,7 +188,7 @@ const Home = () => (
                 colorScheme="teal"
                 leftIcon={<IoLogoGithub />}
               >
-                @Ganesh-Babu-GB
+                @ganeshbabugb
               </Button>
             </Link>
           </ListItem>
@@ -235,19 +203,7 @@ const Home = () => (
                 colorScheme="teal"
                 leftIcon={<AiOutlineLinkedin />}
               >
-                ganeshbabu
-              </Button>
-            </Link>
-          </ListItem>
-
-          <ListItem>
-            <Link href="https://instagram.com/ganeshbabu___" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoInstagram />}
-              >
-                @ganeshbabu___
+                ganeshbabu25
               </Button>
             </Link>
           </ListItem>
